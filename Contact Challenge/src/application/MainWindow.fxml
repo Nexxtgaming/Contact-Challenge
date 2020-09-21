@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:controller="application.MainWindowController" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox>
+         <children>
+            <MenuBar prefHeight="11.0" prefWidth="200.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Contact">
+                  <items>
+                        <MenuItem mnemonicParsing="false" text="Edit" />
+                        <MenuItem mnemonicParsing="false" text="Add" />
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+      <TableView prefHeight="211.0" prefWidth="325.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn prefWidth="75.0" text="First Name" />
+          <TableColumn prefWidth="75.0" text="Last Name" />
+            <TableColumn prefWidth="100.0" text="Phone Number" />
+            <TableColumn prefWidth="74.0" text="Notes" />
+        </columns>
+      </TableView>
+   </children>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+</GridPane>
