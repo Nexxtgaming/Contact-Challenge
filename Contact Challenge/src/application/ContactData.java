@@ -1,6 +1,6 @@
 package application;
 
-import javafx.beans.property.SimpleStringProperty;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -36,7 +36,7 @@ public class ContactData {
     public ContactData() {
         // *** initialize the contacts list here ***
     	contacts = FXCollections.observableArrayList(
-    			
+    			new Contact("Piotr", "Borowski", "BFF", "583654159")
     			);
     	
     	

@@ -8,15 +8,15 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainBorderPane" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
+<BorderPane fx:id="mainBorderPane" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
    <top>
       <VBox prefHeight="0.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <MenuBar>
               <menus>
-                <Menu mnemonicParsing="false" text="Contacts">
+                <Menu  text="Contacts">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem  text="Close" />
                         <MenuItem fx:id="addContact" mnemonicParsing="false" text="Add" />
                         <MenuItem fx:id="editContact" mnemonicParsing="false" text="Edit" />
                   </items>
@@ -27,7 +27,7 @@
       </VBox>
    </top>
    <center>
-      <TableView prefHeight="300.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="contactTableView" prefHeight="300.0" prefWidth="800.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="firstNameColumn" minWidth="75.0" prefWidth="200.0" text="First Name" />
           <TableColumn fx:id="lastNameColumn" minWidth="75.0" prefWidth="200.0" text="Last Name" />

@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -37,15 +39,19 @@ public class MainWindowController implements Initializable{
 	private TableColumn<Contact,String> notesColumn;
 	
 	public ContactData contactDatas= new ContactData();
+//	public ObservableList<Contact>contactDatas = FXCollections.observableArrayList(
+//			new Contact("Piotr", "Borowski", "BFF", "583654159")
+//			);
 	
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL location,ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		firstNameColumn.setCellValueFactory(new PropertyValueFactory<Contact,String>("First Name"));
 		lastNameColumn.setCellValueFactory(new PropertyValueFactory<Contact,String>("Last Name"));
 		phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<Contact,String>("Phone Number"));
 		notesColumn.setCellValueFactory(new PropertyValueFactory<Contact,String>("Notes"));
 		contactTableView.setItems(contactDatas.getContacts());
+		
 		
 	}
 	
@@ -69,7 +75,9 @@ public class MainWindowController implements Initializable{
 		if(result.isPresent()&&result.get()==ButtonType.OK) {
 			AddWindowController controller = fxmlLoader.getController();
 			Contact newContact = controller.processResult();
-			
+			contactTableView.getSelectionModel().select(newContact);
+		}else {
+			System.out.println("Cancle pressed");
 		}
 	}
 
