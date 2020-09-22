@@ -5,52 +5,36 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane fx:controller="application.MainWindowController" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <VBox>
+<BorderPane fx:id="mainBorderPane" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
+   <top>
+      <VBox prefHeight="0.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar prefHeight="11.0" prefWidth="200.0">
+            <MenuBar>
               <menus>
-                <Menu mnemonicParsing="false" text="Contact">
+                <Menu mnemonicParsing="false" text="Contacts">
                   <items>
-                        <MenuItem mnemonicParsing="false" text="Edit" />
-                        <MenuItem mnemonicParsing="false" text="Add" />
                     <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem fx:id="addContact" mnemonicParsing="false" text="Add" />
+                        <MenuItem fx:id="editContact" mnemonicParsing="false" text="Edit" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
          </children>
       </VBox>
-      <TableView prefHeight="211.0" prefWidth="325.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
+   </top>
+   <center>
+      <TableView prefHeight="300.0" prefWidth="800.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="First Name" />
-          <TableColumn prefWidth="75.0" text="Last Name" />
-            <TableColumn prefWidth="100.0" text="Phone Number" />
-            <TableColumn prefWidth="74.0" text="Notes" />
+          <TableColumn fx:id="firstNameColumn" minWidth="75.0" prefWidth="200.0" text="First Name" />
+          <TableColumn fx:id="lastNameColumn" minWidth="75.0" prefWidth="200.0" text="Last Name" />
+            <TableColumn fx:id="phoneNumberColumn" minWidth="75.0" prefWidth="200.0" text="Phone Number" />
+            <TableColumn fx:id="notesColumn" minWidth="75.0" prefWidth="200.0" text="Notes" />
         </columns>
       </TableView>
-   </children>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-   </columnConstraints>
-</GridPane>
+   </center>
+  
+</BorderPane>

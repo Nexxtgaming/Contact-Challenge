@@ -1,5 +1,7 @@
 package application;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import javax.xml.stream.XMLEventFactory;
@@ -33,16 +35,26 @@ public class ContactData {
 
     public ContactData() {
         // *** initialize the contacts list here ***
+    	contacts = FXCollections.observableArrayList(
+    			
+    			);
+    	
+    	
     }
 
     // *** Add methods to add/delete/access contacts here ***
     
-    public void addContact() {
+    public void addContact(Contact contact) {
+    	contacts.add(contact);
     	
     }
-    public void deleteContact() {
+    public void deleteContact(Contact contact) {
+    	contacts.remove(contact);
     	
     }
+    public ObservableList<Contact> getContacts() {
+		return contacts;
+	}
 
     public void loadContacts() {
         try {
@@ -190,5 +202,7 @@ public class ContactData {
         eventWriter.add(eElement);
         eventWriter.add(end);
     }
+
+	
 
 }
