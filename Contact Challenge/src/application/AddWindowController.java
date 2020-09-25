@@ -20,6 +20,7 @@ public class AddWindowController {
 		String phoneNumber = phoneNumberTextArea.getText();
 		String notes = notesTextArea.getText().trim();
 		Contact newContact = new Contact(firstName, lastName, notes, phoneNumber);
+		
 		return newContact;
 	}
 

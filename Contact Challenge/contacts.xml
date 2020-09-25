@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<contacts>
+<contact>
+	<first_name>Piotr</first_name>
+	<last_name>Borowski</last_name>
+	<phone_number>583654159</phone_number>
+	<notes>BFF</notes>
+</contact>
+<contact>
+	<first_name>Bartek</first_name>
+	<last_name>Kowalski</last_name>
+	<phone_number>514789635</phone_number>
+	<notes>Student</notes>
+</contact>
+<contact>
+	<first_name>Maciek</first_name>
+	<last_name>Debiec</last_name>
+	<phone_number>556774258</phone_number>
+	<notes>Ja</notes>
+</contact>
+<contact>
+	<first_name>Piotr</first_name>
+	<last_name>Borowski</last_name>
+	<phone_number>583654159</phone_number>
+	<notes>BFF</notes>
+</contact>
+<contact>
+	<first_name>Bartek</first_name>
+	<last_name>Kowalski</last_name>
+	<phone_number>514789635</phone_number>
+	<notes>Student</notes>
+</contact>
+<contact>
+	<first_name>Maciek</first_name>
+	<last_name>Debiec</last_name>
+	<phone_number>556774258</phone_number>
+	<notes>Ja</notes>
+</contact>
+</contacts>

@@ -1,11 +1,13 @@
 package application;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+
 
 public class Contact {
-	private StringProperty firstName,lastName, notes ;
-	private StringProperty phoneNumber;
+	private SimpleStringProperty firstName = new SimpleStringProperty("");
+	private SimpleStringProperty lastName = new SimpleStringProperty("");
+	private SimpleStringProperty notes = new SimpleStringProperty("");
+	private SimpleStringProperty phoneNumber = new SimpleStringProperty("");
 	
 	public Contact() {
 		
@@ -14,38 +16,49 @@ public class Contact {
 	public Contact(String firstName, String lastName, String notes,
 			String phoneNumber) {
 		super();
-		this.firstName = new SimpleStringProperty(firstName);
-		this.lastName = new SimpleStringProperty(lastName);
-		this.notes = new SimpleStringProperty(notes);
-		this.phoneNumber = new SimpleStringProperty(phoneNumber);
+		this.firstName.set(firstName);
+		this.lastName.set(lastName);
+		this.notes.set(notes);
+		this.phoneNumber.set(phoneNumber);
 	}
-	public String getFirstName() {
+	public SimpleStringProperty getFirstName() {
 	
-		return firstName.get();
+		return firstName;
 	}
 	public void setFirstName(String firstName) {
 	
-		this.firstName = new SimpleStringProperty(firstName);
+		this.firstName.set(firstName);
 		
 	}
-	public String getLastName() {
-		return lastName.get();
+	public SimpleStringProperty getLastName() {
+		return lastName;
 	}
 	public void setLastName(String lastName) {
-		this.lastName = new SimpleStringProperty(lastName);
+		this.lastName.set(lastName);
 	}
-	public String getNotes() {
-		return notes.get();
+	public SimpleStringProperty getNotes() {
+		return notes;
 	}
 	public void setNotes(String notes) {
-		this.notes = new SimpleStringProperty(notes);
+		this.notes.set(notes);
 	}
-	public String getPhoneNumber() {
-		return phoneNumber.get();
+	public SimpleStringProperty getPhoneNumber() {
+		return phoneNumber;
 	}
 	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = new SimpleStringProperty(phoneNumber);
-	};
-	
+		this.phoneNumber.set(phoneNumber);
+	}
+	public void editContact(Contact contact) {
+		this.firstName = contact.getFirstName();
+		this.lastName = contact.getLastName();
+		this.phoneNumber = contact.getPhoneNumber();
+		this.notes = contact.getNotes();
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Contact{"+"First Name"+firstName+", last Name "+lastName+"phone Number "+phoneNumber+", notes "+notes;
+	}
 	
 }

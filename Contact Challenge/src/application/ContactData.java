@@ -34,12 +34,10 @@ public class ContactData {
     private ObservableList<Contact> contacts;
 
     public ContactData() {
-        // *** initialize the contacts list here ***
-    	contacts = FXCollections.observableArrayList(
-    			new Contact("Piotr", "Borowski", "BFF", "583654159")
-    			);
-    	
-    	
+       
+	
+		  contacts = FXCollections.observableArrayList( );
+
     }
 
     // *** Add methods to add/delete/access contacts here ***
@@ -51,10 +49,18 @@ public class ContactData {
     public void deleteContact(Contact contact) {
     	contacts.remove(contact);
     	
+    	
+    	
     }
     public ObservableList<Contact> getContacts() {
 		return contacts;
 	}
+    private int searchContact(Contact contact) {
+    	return contacts.indexOf(contact);
+    }
+    public Contact accessContact(Contact contact) {
+    	return contacts.get(searchContact(contact));
+    }
 
     public void loadContacts() {
         try {
@@ -175,10 +181,10 @@ public class ContactData {
         eventWriter.add(configStartElement);
         eventWriter.add(end);
         // Write the different nodes
-        createNode(eventWriter, FIRST_NAME, contact.getFirstName());
-        createNode(eventWriter, LAST_NAME, contact.getLastName());
-        createNode(eventWriter, PHONE_NUMBER, contact.getPhoneNumber());
-        createNode(eventWriter, NOTES, contact.getNotes());
+        createNode(eventWriter, FIRST_NAME, contact.getFirstName().get());
+        createNode(eventWriter, LAST_NAME, contact.getLastName().get());
+        createNode(eventWriter, PHONE_NUMBER, contact.getPhoneNumber().get());
+        createNode(eventWriter, NOTES, contact.getNotes().get());
 
         eventWriter.add(eventFactory.createEndElement("", "", CONTACT));
         eventWriter.add(end);
